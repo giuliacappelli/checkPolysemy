@@ -11,14 +11,14 @@ for v in verbs:
 
 	simlist = []
 	for synset1, synset2 in itertools.combinations(synsets, 2):
-		similarity = wn.wup_similarity(synset1, synset2) # Wu-Palmer similarity score
+		similarity = wn.wup_similarity(synset1, synset2) # Wu-Palmer similarity score, vary between 0 and 1
 		simlist.append(similarity)
 	if len(simlist) != 0:
 		critical = [i for i in simlist if i < 0.15] # bank1-2 0.1428, bank 1-6 0.1538 (typical textbook examples for polysemy)
 
 		# UNCOMMENT TO QUANTIFY POLYSEMY OF VERB
-		# print(v, len(critical), " out of ", len(simlist))
+		print(v, len(critical), " out of ", len(simlist))
 
-		# UNCOMMENT TO PRINT OUT ONLY POLYSEMOUS VERBS (having more than 20% of different word senses)
-		if len(critical)/len(simlist) >= 0.20:
-			print(v, len(critical), " out of ", len(simlist))
+		# UNCOMMENT TO PRINT OUT ONLY VERY POLYSEMOUS VERBS (having more than 20% of different word senses)
+		# if len(critical)/len(simlist) >= 0.20:
+		# 	print(v, len(critical), " out of ", len(simlist))
