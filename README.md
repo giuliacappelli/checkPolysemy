@@ -1,4 +1,4 @@
-# Quantify the polysemy of words in a list using WordNet
+# Quantify the polysemy of words in a list using WordNet (Wu-Palmer Similarity)
 
 This bite-sized script may come in handy if you are a linguist and want to know whether some words are polysemous, and to what extent. It computes the Wu-Palmer Similarity score between all pairs of WordNet synsets of each word in your list, considers critically polysemous any pair having a score below 0.15 (based on the Wu-Palmer Similarity scores for the noun "bank"). Check the script for more details!
 
